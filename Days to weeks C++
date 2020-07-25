@@ -1,0 +1,24 @@
+//Este programa da la equivalencia en semanas de una cantidad de dias
+//Creado por: Gabriel Del Castillo
+//Fecha de Creacion: 03/11/17
+#include <iostream>
+using namespace std;
+int main()
+{
+float x = 0;
+float w = 1;
+int end = 1;
+
+while (end==1)
+{
+	system("CLS");
+cout<<"Entre cantidad de dias \n";
+cin>>x;
+w = x/7;
+cout<< "La cantidad de "<< x <<" dias,equivale a "<< w <<" semanas\n";
+
+cout<<"Para salir, entre 0, para continuar entre 1 \n";
+  cin>>end;
+}
+return 0;
+}
