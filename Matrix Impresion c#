@@ -1,0 +1,47 @@
+using System;
+using System.Security.Cryptography.X509Certificates;
+
+namespace tarea
+{
+    //Gabriel Del Castillo 2017-1023
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int x = 1;
+            Console.WriteLine("tabla Vacia \n \n");
+            for (int i = 1; i <= 12; i++)
+            {
+                Console.Write("\t" + i);
+
+            }
+            for (int i = 1; i <= 12; i++)
+            {
+                Console.WriteLine();
+                Console.WriteLine(i);
+
+            }
+            Console.WriteLine();
+            Console.WriteLine("tabla llena \n \n");
+            for (int i = 1; i <= 12; i++)
+            {
+                Console.Write("\t" + i);
+
+            }
+            Console.WriteLine();
+            for (int i = 1; i <= 12; i++)
+            {
+
+                Console.WriteLine();
+                Console.Write(i);
+                for (int z = 1; z <= 12; z++)
+                {
+                    Console.Write("\t" + i * x );
+                    x++;
+                }
+                x = 1;
+                Console.WriteLine();
+            }
+        }
+    }
+}
