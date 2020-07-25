@@ -1,0 +1,48 @@
+/**
+ *
+ * @author Gabriel 2017-1023
+ */
+import java.util.Scanner;
+public class ValidacionDeCedula
+ {
+    private static String cedula;
+    public static void main(String args[])
+    {
+        Scanner sc= new Scanner(System.in);
+        System.out.println("Ingrese la cedula que desea validar.");
+        cedula= sc.next();
+        System.out.println("La Cedula introducida "+(validarCedula()? "es valida": "no es valida"));
+    }
+    public static boolean validarCedula() {
+
+        int suma = 0;
+        final char[] peso = {'1', '2', '1', '2', '1', '2', '1', '2', '1', '2'};
+        if ((cedula == null) || (cedula.length() != 11)) {
+            return false;
+        }
+        try {
+            Long.parseLong(cedula);
+        } catch (Exception e) {
+            return false;
+        }
+        for (int i = 0; i < 10; i++) {
+            int a = Character.getNumericValue(cedula.charAt(i));
+            int b = Character.getNumericValue(peso[i]);
+            char[] mult = Integer.toString(a * b).toCharArray();
+            if (mult.length > 1) {
+                a = Character.getNumericValue(mult[0]);
+                b = Character.getNumericValue(mult[1]);
+            } else {
+                a = 0;
+                b = Character.getNumericValue(mult[0]);
+            }
+            suma = suma + a + b;
+        }
+        int digito = (10 - (suma % 10)) % 10;
+        if (digito != Character.getNumericValue(cedula.charAt(10))) {
+            return false;
+        }
+        return true;
+    }
+}
+    
