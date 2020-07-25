@@ -1,0 +1,539 @@
+#include <iostream>
+using namespace std;
+
+
+int main(){
+	float escogidog,liceyg,aguilasg,torosg,estrellasg,gigantesg;
+	float escogidop,liceyp,aguilasp,torosp,estrellasp,gigantesp;
+	float escogido,licey,aguilas,toros,estrellas,gigantes;
+	int aves,avli,avag,avto,avest,avgi;
+	
+	//Juegos Ganados
+	
+	cout<<"introduzca los juegos ganados del escogido\n";
+	cin>>escogidog;
+	cout<<"introduzca los juegos ganados del licey\n";
+	cin>>liceyg;
+	cout<<"introduzca los juegos ganados de las aguilas\n";
+	cin>>aguilasg;
+	cout<<"introduzca los juegos ganados de los toros\n";
+	cin>>torosg;
+	cout<<"introduzca los juegos ganados de las estrellas\n";
+	cin>>estrellasg;
+	cout<<"introduzca los juegos ganados de los gigantes\n";
+	cin>>gigantesg;
+	
+	system("CLS"); //Juegos Perdidos
+	
+	cout<<"introduzca los juegos perdidos del escogido\n";
+	cin>>escogidop;
+	cout<<"introduzca los juegos perdidos del licey\n";
+	cin>>liceyp;
+	cout<<"introduzca los juegos perdidos de las aguilas\n";
+	cin>>aguilasp;
+	cout<<"introduzca los juegos perdidos de los toros\n";
+	cin>>torosp;
+	cout<<"introduzca los juegos perdidos de las estrellas\n";
+	cin>>estrellasp;
+	cout<<"introduzca los juegos perdidos de los gigantes\n";
+	cin>>gigantesp;
+	
+	escogido=escogidog+escogidop;
+	licey=liceyg+liceyp;
+	aguilas=aguilasg+aguilasp;
+	toros=torosg+torosp;
+	estrellas=estrellasg+estrellasp;
+	gigantes=gigantesg+gigantesp;
+	
+	aves=(escogidog/escogido)*1000;
+	avli=(liceyg/licey)*1000;
+	avag=(aguilasg/aguilas)*1000;
+	avto=(torosg/toros)*1000;
+	avest=(estrellasg/estrellas)*1000;
+	avgi=(gigantesg/gigantes)*1000;
+	
+	system("CLS");
+	cout<<"Posicion-----------Nombre Del Equipo---Juegos Ganados---Juegos Perdidos---Average\n";
+	
+	//Primer Caso Escogido en Primer lugar
+	
+	if(escogidog>=liceyg and escogidog>=aguilasg and escogidog>=torosg and escogidog>=estrellasg and escogidog>=gigantesg){
+	cout<<"1ro.               Leones del Escogido.        "<<escogidog<<"                 "<<escogidop<<"            "<<aves<<"\n";
+	
+		if(liceyg>=aguilasg and liceyg>=aguilasg and liceyg>=torosg and liceyg>=estrellasg and liceyg>=gigantesg){ //LICEY 2do
+			cout<<"2do.               Tigres del Licey.           "<<liceyg<<"                 "<<liceyp<<"            "<<avli<<"\n";
+			
+				if(aguilasg>=torosg and aguilasg>=estrellasg and aguilasg>=gigantesg){  //AGUILAS 3ro
+				cout<<"3ro.               Aguilas Cibae?as.           "<<aguilasg<<"                 "<<aguilasp<<"            "<<avag<<"\n";
+				
+						if(torosg>=estrellasg  and torosg>=gigantesg){   //TOROS 4TO
+							cout<<"4to.               Toros del Este.           "<<torosg<<"                 "<<torosp<<"            "<<avto<<"\n";
+							
+							if(estrellasg>=gigantesg){
+								cout<<"5to.               Estrellas Orientales.           "<<estrellasg<<"                 "<<estrellasp<<"            "<<avest<<"\n";
+								cout<<"6to.               Gigantes del Cibao.             "<<gigantesg<<"                  "<<gigantesp<<"            "<<avgi<<"\n";
+								}
+							
+								if(gigantesg>=estrellasg){
+									cout<<"5to.               Gigantes del Cibao.             "<<gigantesg<<"                  "<<gigantesp<<"            "<<avgi<<"\n";
+									cout<<"6to.               Estrellas Orientales.           "<<estrellasg<<"                 "<<estrellasp<<"            "<<avest<<"\n";
+								}		
+						}
+						else if(estrellasg>=torosg  and estrellasg>=gigantesg){  //ESTRELLAS 4TO
+							cout<<"4to.               Estrellas Orientales.           "<<estrellasg<<"                 "<<estrellasp<<"            "<<avest<<"\n";
+							if(torosg>=gigantesg){
+								cout<<"5to.               Toros del Este.           "<<torosg<<"                 "<<torosp<<"            "<<avto<<"\n";
+								cout<<"6to.               Gigantes del Cibao.             "<<gigantesg<<"                  "<<gigantesp<<"            "<<avgi<<"\n";
+								}
+								if(gigantesg>=torosg){
+									cout<<"5to.               Gigantes del Cibao.             "<<gigantesg<<"                  "<<gigantesp<<"            "<<avgi<<"\n";
+									cout<<"6to.               Toros del Este.           "<<torosg<<"                 "<<torosp<<"            "<<avto<<"\n";
+								}
+						}
+						else if(gigantesg>=torosg  and gigantesg>=estrellasg){ //GIGANTES 4to
+							cout<<"4to.               Gigantes del Cibao.             "<<gigantesg<<"                  "<<gigantesp<<"            "<<avgi<<"\n";
+							if(torosg>=estrellasg){
+								cout<<"5to.               Toros del Este.           "<<torosg<<"                 "<<torosp<<"            "<<avto<<"\n";
+								cout<<"6to.               Estrellas Orientales.           "<<estrellasg<<"                 "<<estrellasp<<"            "<<avest<<"\n";
+							}
+							if(estrellasg>=torosg){
+								cout<<"5to.               Estrellas Orientales.           "<<estrellasg<<"                 "<<estrellasp<<"            "<<avest<<"\n";
+								cout<<"6to.               Toros del Este.           "<<torosg<<"                 "<<torosp<<"            "<<avto<<"\n";
+							}
+						}
+				}
+				else if(toros>=aguilasg and torosg>=estrellasg and torosg>=gigantesg){  //TOROS 3ro
+				cout<<"3ro.               Toros del Este.           "<<torosg<<"                 "<<torosp<<"            "<<avto<<"\n";
+				
+						if(aguilasg>=estrellasg  and aguilasg>=gigantesg){  //AGUILAS 4To
+							cout<<"4to.               Aguilas Cibae?as.           "<<aguilasg<<"                 "<<aguilasp<<"            "<<avag<<"\n";
+							
+							if(estrellasg>=gigantesg){  //ESTRELLAS 5TO
+								cout<<"5to.               Estrellas Orientales.           "<<estrellasg<<"                 "<<estrellasp<<"            "<<avest<<"\n";
+								cout<<"6to.               Gigantes del Cibao.             "<<gigantesg<<"                  "<<gigantesp<<"            "<<avgi<<"\n";
+								}
+							
+								if(gigantesg>=estrellasg){  //GIGANTES 5To
+									cout<<"5to.               Gigantes del Cibao.             "<<gigantesg<<"                  "<<gigantesp<<"            "<<avgi<<"\n";
+									cout<<"6to.               Estrellas Orientales.           "<<estrellasg<<"                 "<<estrellasp<<"            "<<avest<<"\n";
+								}		
+						}
+						else if(estrellasg>=aguilasg  and estrellasg>=gigantesg){ //ESTRELLAS 4TO
+							cout<<"4to.               Estrellas Orientales.           "<<estrellasg<<"                 "<<estrellasp<<"            "<<avest<<"\n";
+							if(aguilasg>=gigantesg){                              //AGUILAS 5TO
+								cout<<"5to.               Aguilas Cibae?as.           "<<aguilasg<<"                 "<<aguilasp<<"            "<<avag<<"\n";
+								cout<<"6to.               Gigantes del Cibao.             "<<gigantesg<<"                  "<<gigantesp<<"            "<<avgi<<"\n";
+								}
+							else if(gigantesg>=aguilasg){                         //GIGANTES 5to
+									cout<<"5to.               Gigantes del Cibao.             "<<gigantesg<<"                  "<<gigantesp<<"            "<<avgi<<"\n";
+									cout<<"6to.               Aguilas Cibae?as.           "<<aguilasg<<"                 "<<aguilasp<<"            "<<avag<<"\n";
+								}
+						}
+						else if(gigantesg>=aguilasg  and gigantesg>=estrellasg){  //GIGANTES 4TO
+							cout<<"4to.               Gigantes del Cibao.             "<<gigantesg<<"                  "<<gigantesp<<"            "<<avgi<<"\n";
+							if(aguilasg>=estrellasg){                             //AGUILAS 5TO
+								cout<<"5to.               Aguilas Cibae?as.           "<<aguilasg<<"                 "<<aguilasp<<"            "<<avag<<"\n";
+								cout<<"6to.               Estrellas Orientales.           "<<estrellasg<<"                 "<<estrellasp<<"            "<<avest<<"\n";
+							}
+							else if(estrellasg>=aguilasg){                        //ESTRELLAS 5To
+								cout<<"5to.               Estrellas Orientales.           "<<estrellasg<<"                 "<<estrellasp<<"            "<<avest<<"\n";
+								cout<<"6to.               Aguilas Cibae?as.           "<<aguilasg<<"                 "<<aguilasp<<"            "<<avag<<"\n";
+							}
+						}
+				}
+				else if(gigantesg>=aguilasg and gigantesg>=estrellasg and gigantesg>=torosg){  //GIGANTES 3ro
+				cout<<"3ro.               Gigantes del Cibao.             "<<gigantesg<<"                  "<<gigantesp<<"            "<<avgi<<"\n";
+				
+						if(aguilasg>=estrellasg  and aguilasg>=torosg){                       //AGUILAS 4to
+							cout<<"4to.               Aguilas Cibae?as.           "<<aguilasg<<"                 "<<aguilasp<<"            "<<avag<<"\n";
+							
+							if(estrellasg>=gigantesg){                                       //ESTRELLAS 5TO
+								cout<<"5to.               Estrellas Orientales.           "<<estrellasg<<"                 "<<estrellasp<<"            "<<avest<<"\n";
+								cout<<"6to.               Toros del Este.           "<<torosg<<"                 "<<torosp<<"            "<<avto<<"\n";
+								}
+							
+								if(gigantesg>=estrellasg){                                   //TOROS 5TO
+									cout<<"5to.               Toros del Este.           "<<torosg<<"                 "<<torosp<<"            "<<avto<<"\n";
+									cout<<"6to.               Estrellas Orientales.           "<<estrellasg<<"                 "<<estrellasp<<"            "<<avest<<"\n";
+								}		
+						}
+						else if(estrellasg>=aguilasg  and estrellasg>=torosg){              //ESTRELLA 4TO
+							cout<<"4to.               Estrellas Orientales.           "<<estrellasg<<"                 "<<estrellasp<<"            "<<avest<<"\n";
+							if(aguilasg>=torosg){                                          //AGUILAS 5TO
+								cout<<"5to.               Aguilas Cibae?as.           "<<aguilasg<<"                 "<<aguilasp<<"            "<<avag<<"\n";
+								cout<<"6to.               Toros del Este.           "<<torosg<<"                 "<<torosp<<"            "<<avto<<"\n";
+								}
+							else if(torosg>=aguilasg){                                    //TOROS 5To
+									cout<<"5to.               Toros del Este.           "<<torosg<<"                 "<<torosp<<"            "<<avto<<"\n";
+									cout<<"6to.               Aguilas Cibae?as.           "<<aguilasg<<"                 "<<aguilasp<<"            "<<avag<<"\n";
+								}
+						}
+						else if(torosg>=aguilasg  and torosg>=estrellasg){               //TOROS 4to
+							cout<<"4to.               Toros del Este.           "<<torosg<<"                 "<<torosp<<"            "<<avto<<"\n";
+							if(aguilasg>=estrellasg){                                    //AGUILAS 5to
+								cout<<"5to.               Aguilas Cibae?as.           "<<aguilasg<<"                 "<<aguilasp<<"            "<<avag<<"\n";
+								cout<<"6to.               Estrellas Orientales.           "<<estrellasg<<"                 "<<estrellasp<<"            "<<avest<<"\n";
+							}
+							else if(estrellasg>=aguilasg){                               //ESTRELLAS 5to
+								cout<<"5to.               Estrellas Orientales.           "<<estrellasg<<"                 "<<estrellasp<<"            "<<avest<<"\n";
+								cout<<"6to.               Aguilas Cibae?as.           "<<aguilasg<<"                 "<<aguilasp<<"            "<<avag<<"\n";
+							}
+						}
+					}
+				else if(estrellasg>=aguilasg and estrellasg>=gigantesg and estrellasg>=torosg){  //ESTRELLAS 3ro
+				cout<<"3ro.               Estrellas Orientales.           "<<estrellasg<<"                 "<<estrellasp<<"            "<<avest<<"\n";
+				
+						if(gigantesg>=aguilasg  and estrellasg>=torosg){                       //GIGANTES 4to
+							cout<<"4to.               Gigantes del Cibao.             "<<gigantesg<<"                  "<<gigantesp<<"            "<<avgi<<"\n";
+							
+							if(aguilasg>=torosg){                                       //AGUILAS 5TO
+								cout<<"5to.               Aguilas Cibae?as.           "<<aguilasg<<"                 "<<aguilasp<<"            "<<avag<<"\n";
+								cout<<"6to.               Toros del Este.           "<<torosg<<"                 "<<torosp<<"            "<<avto<<"\n";
+								}
+							
+								if(torosg>=aguilasg){                                   //TOROS 5TO
+									cout<<"5to.               Toros del Este.           "<<torosg<<"                 "<<torosp<<"            "<<avto<<"\n";
+									cout<<"6to.               Aguilas Cibae?as.           "<<aguilasg<<"                 "<<aguilasp<<"            "<<avag<<"\n";
+								}		
+						}
+						else if(aguilasg>=gigantesg  and aguilasg>=torosg){              //AGUILAS 4TO
+							cout<<"4to.               Aguilas Cibae?as.           "<<aguilasg<<"                 "<<aguilasp<<"            "<<avag<<"\n";
+							if(gigantesg>=torosg){                                          //GIGANTES 5TO
+								cout<<"5to.               Gigantes del Cibao.             "<<gigantesg<<"                  "<<gigantesp<<"            "<<avgi<<"\n";
+								cout<<"6to.               Toros del Este.           "<<torosg<<"                 "<<torosp<<"            "<<avto<<"\n";
+								}
+							else if(torosg>=gigantesg){                                    //TOROS 5To
+									cout<<"5to.               Toros del Este.           "<<torosg<<"                 "<<torosp<<"            "<<avto<<"\n";
+									cout<<"6to.               Gigantes del Cibao.             "<<gigantesg<<"                  "<<gigantesp<<"            "<<avgi<<"\n";
+								}
+						}
+						else if(torosg>=aguilasg  and torosg>=estrellasg){               //TOROS 4to
+							cout<<"4to.               Toros del Este.           "<<torosg<<"                 "<<torosp<<"            "<<avto<<"\n";
+							if(aguilasg>=gigantesg){                                    //AGUILAS 5to
+								cout<<"5to.               Aguilas Cibae?as.           "<<aguilasg<<"                 "<<aguilasp<<"            "<<avag<<"\n";
+								cout<<"6to.               Gigantes del Cibao.             "<<gigantesg<<"                  "<<gigantesp<<"            "<<avgi<<"\n";}
+							else if(gigantesg>=aguilasg){                               //GIGANTES 5to
+								cout<<"5to.               Gigantes del Cibao.             "<<gigantesg<<"                  "<<gigantesp<<"            "<<avgi<<"\n";
+								cout<<"6to.               Aguilas Cibae?as.           "<<aguilasg<<"                 "<<aguilasp<<"            "<<avag<<"\n";}
+						}
+					}
+				}
+			else if(liceyg>=aguilasg and liceyg>=aguilasg and liceyg>=torosg and liceyg>=estrellasg and liceyg>=gigantesg){ //AGUILAS 2DO
+			cout<<"2do.               Aguilas Cibae?as.           "<<aguilasg<<"                 "<<aguilasp<<"            "<<avag<<"\n";
+			
+				if(liceyg>=torosg and liceyg>=estrellasg and liceyg>=gigantesg){  //LICEY 3ro
+				cout<<"3ro.               Tigres del Licey.           "<<liceyg<<"                 "<<liceyp<<"            "<<avli<<"\n";
+				
+						if(torosg>=estrellasg  and torosg>=gigantesg){   //TOROS 4TO
+							cout<<"4to.               Toros del Este.           "<<torosg<<"                 "<<torosp<<"            "<<avto<<"\n";
+							
+							if(estrellasg>=gigantesg){
+								cout<<"5to.               Estrellas Orientales.           "<<estrellasg<<"                 "<<estrellasp<<"            "<<avest<<"\n";
+								cout<<"6to.               Gigantes del Cibao.             "<<gigantesg<<"                  "<<gigantesp<<"            "<<avgi<<"\n";
+								}
+							
+								if(gigantesg>=estrellasg){
+									cout<<"5to.               Gigantes del Cibao.             "<<gigantesg<<"                  "<<gigantesp<<"            "<<avgi<<"\n";
+									cout<<"6to.               Estrellas Orientales.           "<<estrellasg<<"                 "<<estrellasp<<"            "<<avest<<"\n";
+								}		
+						}
+						else if(estrellasg>=torosg  and estrellasg>=gigantesg){  //ESTRELLAS 4TO
+							cout<<"4to.               Estrellas Orientales.           "<<estrellasg<<"                 "<<estrellasp<<"            "<<avest<<"\n";
+							if(torosg>=gigantesg){
+								cout<<"5to.               Toros del Este.           "<<torosg<<"                 "<<torosp<<"            "<<avto<<"\n";
+								cout<<"6to.               Gigantes del Cibao.             "<<gigantesg<<"                  "<<gigantesp<<"            "<<avgi<<"\n";
+								}
+								if(gigantesg>=torosg){
+									cout<<"5to.               Gigantes del Cibao.             "<<gigantesg<<"                  "<<gigantesp<<"            "<<avgi<<"\n";
+									cout<<"6to.               Toros del Este.           "<<torosg<<"                 "<<torosp<<"            "<<avto<<"\n";
+								}
+						}
+						else if(gigantesg>=torosg  and gigantesg>=estrellasg){ //GIGANTES 4to
+							cout<<"4to.               Gigantes del Cibao.             "<<gigantesg<<"                  "<<gigantesp<<"            "<<avgi<<"\n";
+							if(torosg>=estrellasg){
+								cout<<"5to.               Toros del Este.           "<<torosg<<"                 "<<torosp<<"            "<<avto<<"\n";
+								cout<<"6to.               Estrellas Orientales.           "<<estrellasg<<"                 "<<estrellasp<<"            "<<avest<<"\n";
+							}
+							if(estrellasg>=torosg){
+								cout<<"5to.               Estrellas Orientales.           "<<estrellasg<<"                 "<<estrellasp<<"            "<<avest<<"\n";
+								cout<<"6to.               Toros del Este.           "<<torosg<<"                 "<<torosp<<"            "<<avto<<"\n";
+							}
+						}
+				}
+				else if(toros>=liceyg and torosg>=estrellasg and torosg>=gigantesg){  //TOROS 3ro
+				cout<<"3ro.               Toros del Este.           "<<torosg<<"                 "<<torosp<<"            "<<avto<<"\n";
+				
+						if(liceyg>=estrellasg  and liceyg>=gigantesg){  //LICEY 4To
+							cout<<"4to.               Tigres del Licey.           "<<liceyg<<"                 "<<liceyp<<"            "<<avli<<"\n";
+							
+							if(estrellasg>=gigantesg){  //ESTRELLAS 5TO
+								cout<<"5to.               Estrellas Orientales.           "<<estrellasg<<"                 "<<estrellasp<<"            "<<avest<<"\n";
+								cout<<"6to.               Gigantes del Cibao.             "<<gigantesg<<"                  "<<gigantesp<<"            "<<avgi<<"\n";
+								}
+							
+								if(gigantesg>=estrellasg){  //GIGANTES 5To
+									cout<<"5to.               Gigantes del Cibao.             "<<gigantesg<<"                  "<<gigantesp<<"            "<<avgi<<"\n";
+									cout<<"6to.               Estrellas Orientales.           "<<estrellasg<<"                 "<<estrellasp<<"            "<<avest<<"\n";
+								}		
+						}
+						else if(estrellasg>=aguilasg  and estrellasg>=gigantesg){ //ESTRELLAS 4TO
+							cout<<"4to.               Estrellas Orientales.           "<<estrellasg<<"                 "<<estrellasp<<"            "<<avest<<"\n";
+							if(liceyg>=gigantesg){                              //LICEY 5TO
+								cout<<"5to.               Tigres del Licey.           "<<liceyg<<"                 "<<liceyp<<"            "<<avli<<"\n";
+								cout<<"6to.               Gigantes del Cibao.             "<<gigantesg<<"                  "<<gigantesp<<"            "<<avgi<<"\n";
+								}
+							else if(gigantesg>=aguilasg){                         //GIGANTES 5to
+									cout<<"5to.               Gigantes del Cibao.             "<<gigantesg<<"                  "<<gigantesp<<"            "<<avgi<<"\n";
+									cout<<"6to.               Aguilas Cibae?as.           "<<aguilasg<<"                 "<<aguilasp<<"            "<<avag<<"\n";
+								}
+						}
+						else if(gigantesg>=liceyg  and gigantesg>=estrellasg){  //GIGANTES 4TO
+							cout<<"4to.               Gigantes del Cibao.             "<<gigantesg<<"                  "<<gigantesp<<"            "<<avgi<<"\n";
+							if(liceyg>=estrellasg){                             //LICEY 5TO
+								cout<<"5to.               Tigres del Licey.           "<<liceyg<<"                 "<<liceyp<<"            "<<avli<<"\n";
+								cout<<"6to.               Estrellas Orientales.           "<<estrellasg<<"                 "<<estrellasp<<"            "<<avest<<"\n";
+							}
+							else if(estrellasg>=liceyg){                        //ESTRELLAS 5To
+								cout<<"5to.               Estrellas Orientales.           "<<estrellasg<<"                 "<<estrellasp<<"            "<<avest<<"\n";
+								cout<<"6to.               Tigres del Licey.           "<<liceyg<<"                 "<<liceyp<<"            "<<avli<<"\n";
+							}
+						}
+				}
+				else if(gigantesg>=liceyg and gigantesg>=estrellasg and gigantesg>=torosg){  //GIGANTES 3ro
+				cout<<"3ro.               Gigantes del Cibao.             "<<gigantesg<<"                  "<<gigantesp<<"            "<<avgi<<"\n";
+				
+						if(liceyg>=estrellasg  and liceyg>=torosg){                       //LICEY 4to
+							cout<<"4to.               Tigres del Licey.           "<<liceyg<<"                 "<<liceyp<<"            "<<avli<<"\n";
+							
+							if(estrellasg>=gigantesg){                                       //ESTRELLAS 5TO
+								cout<<"5to.               Estrellas Orientales.           "<<estrellasg<<"                 "<<estrellasp<<"            "<<avest<<"\n";
+								cout<<"6to.               Toros del Este.           "<<torosg<<"                 "<<torosp<<"            "<<avto<<"\n";
+								}
+							
+								if(gigantesg>=estrellasg){                                   //TOROS 5TO
+									cout<<"5to.               Toros del Este.           "<<torosg<<"                 "<<torosp<<"            "<<avto<<"\n";
+									cout<<"6to.               Estrellas Orientales.           "<<estrellasg<<"                 "<<estrellasp<<"            "<<avest<<"\n";
+								}		
+						}
+						else if(estrellasg>=liceyg  and estrellasg>=torosg){              //ESTRELLA 4TO
+							cout<<"4to.               Estrellas Orientales.           "<<estrellasg<<"                 "<<estrellasp<<"            "<<avest<<"\n";
+							if(liceyg>=torosg){                                          //LICEY 5TO
+								cout<<"5to.               Tigres del Licey.           "<<liceyg<<"                 "<<liceyp<<"            "<<avli<<"\n";
+								cout<<"6to.               Toros del Este.           "<<torosg<<"                 "<<torosp<<"            "<<avto<<"\n";
+								}
+							else if(torosg>=liceyg){                                    //TOROS 5To
+									cout<<"5to.               Toros del Este.           "<<torosg<<"                 "<<torosp<<"            "<<avto<<"\n";
+									cout<<"6to.               Tigres del Licey.           "<<liceyg<<"                 "<<liceyp<<"            "<<avli<<"\n";
+								}
+						}
+						else if(torosg>=liceyg  and torosg>=estrellasg){               //TOROS 4to
+							cout<<"4to.               Toros del Este.           "<<torosg<<"                 "<<torosp<<"            "<<avto<<"\n";
+							if(aguilasg>=estrellasg){                                    //LICEY 5to
+								cout<<"5to.               Tigres del Licey.           "<<liceyg<<"                 "<<liceyp<<"            "<<avli<<"\n";
+								cout<<"6to.               Estrellas Orientales.           "<<estrellasg<<"                 "<<estrellasp<<"            "<<avest<<"\n";
+							}
+							else if(estrellasg>=liceyg){                               //ESTRELLAS 5to
+								cout<<"5to.               Estrellas Orientales.           "<<estrellasg<<"                 "<<estrellasp<<"            "<<avest<<"\n";
+								cout<<"6to.               Tigres del Licey.           "<<liceyg<<"                 "<<liceyp<<"            "<<avli<<"\n";
+							}
+						}
+					}
+				else if(estrellasg>=liceyg and estrellasg>=gigantesg and estrellasg>=torosg){  //ESTRELLAS 3ro
+				cout<<"3ro.               Estrellas Orientales.           "<<estrellasg<<"                 "<<estrellasp<<"            "<<avest<<"\n";
+				
+						if(gigantesg>=liceyg  and estrellasg>=torosg){                       //GIGANTES 4to
+							cout<<"4to.               Gigantes del Cibao.             "<<gigantesg<<"                  "<<gigantesp<<"            "<<avgi<<"\n";
+							
+							if(liceyg>=torosg){                                       //licey 5TO
+								cout<<"5to.               Tigres del Licey.           "<<liceyg<<"                 "<<liceyp<<"            "<<avli<<"\n";
+								cout<<"6to.               Toros del Este.           "<<torosg<<"                 "<<torosp<<"            "<<avto<<"\n";
+								}
+							
+								if(torosg>=liceyg){                                   //TOROS 5TO
+									cout<<"5to.               Toros del Este.           "<<torosg<<"                 "<<torosp<<"            "<<avto<<"\n";
+									cout<<"6to.               Tigres del Licey.           "<<liceyg<<"                 "<<liceyp<<"            "<<avli<<"\n";
+								}		
+						}
+						else if(liceyg>=gigantesg  and liceyg>=torosg){              //LICEY 4TO
+							cout<<"4to.               Tigres del Licey.           "<<liceyg<<"                 "<<liceyp<<"            "<<avli<<"\n";
+							if(gigantesg>=torosg){                                          //GIGANTES 5TO
+								cout<<"5to.               Gigantes del Cibao.             "<<gigantesg<<"                  "<<gigantesp<<"            "<<avgi<<"\n";
+								cout<<"6to.               Toros del Este.           "<<torosg<<"                 "<<torosp<<"            "<<avto<<"\n";
+								}
+							else if(torosg>=gigantesg){                                    //TOROS 5To
+									cout<<"5to.               Toros del Este.           "<<torosg<<"                 "<<torosp<<"            "<<avto<<"\n";
+									cout<<"6to.               Gigantes del Cibao.             "<<gigantesg<<"                  "<<gigantesp<<"            "<<avgi<<"\n";
+								}
+						}
+						else if(torosg>=liceyg  and torosg>=estrellasg){               //TOROS 4to
+							cout<<"4to.               Toros del Este.           "<<torosg<<"                 "<<torosp<<"            "<<avto<<"\n";
+							if(liceyg>=gigantesg){                                    //LICEY 5to
+								cout<<"5to.               Tigres del Licey.           "<<liceyg<<"                 "<<liceyp<<"            "<<avli<<"\n";
+								cout<<"6to.               Gigantes del Cibao.             "<<gigantesg<<"                  "<<gigantesp<<"            "<<avgi<<"\n";}
+							else if(gigantesg>=liceyg){                               //GIGANTES 5to
+								cout<<"5to.               Gigantes del Cibao.             "<<gigantesg<<"                  "<<gigantesp<<"            "<<avgi<<"\n";
+								cout<<"6to.               Tigres del Licey.           "<<liceyg<<"                 "<<liceyp<<"            "<<avli<<"\n";}
+						}
+					}
+				}
+				if(gigantesg>=aguilasg and gigantesg>=aguilasg and gigantesg>=torosg and gigantesg>=estrellasg and gigantesg>=gigantesg){ //GIGANTES 2do
+			cout<<"2do.               Gigantes del Cibao.             "<<gigantesg<<"                  "<<gigantesp<<"            "<<avgi<<"\n";
+			
+				if(aguilasg>=torosg and aguilasg>=estrellasg and aguilasg>=gigantesg){  //AGUILAS 3ro
+				cout<<"3ro.               Aguilas Cibae?as.           "<<aguilasg<<"                 "<<aguilasp<<"            "<<avag<<"\n";
+				
+						if(torosg>=estrellasg  and torosg>=gigantesg){   //TOROS 4TO
+							cout<<"4to.               Toros del Este.           "<<torosg<<"                 "<<torosp<<"            "<<avto<<"\n";
+							
+							if(estrellasg>=liceyg){
+								cout<<"5to.               Estrellas Orientales.           "<<estrellasg<<"                 "<<estrellasp<<"            "<<avest<<"\n";
+								cout<<"6to.               Tigres del Licey.           "<<liceyg<<"                 "<<liceyp<<"            "<<avli<<"\n";
+								}
+							
+								if(liceyg>=estrellasg){
+									cout<<"5to.               Tigres del Licey.           "<<liceyg<<"                 "<<liceyp<<"            "<<avli<<"\n";
+									cout<<"6to.               Estrellas Orientales.           "<<estrellasg<<"                 "<<estrellasp<<"            "<<avest<<"\n";
+								}		
+						}
+						else if(estrellasg>=torosg  and estrellasg>=gigantesg){  //ESTRELLAS 4TO
+							cout<<"4to.               Estrellas Orientales.           "<<estrellasg<<"                 "<<estrellasp<<"            "<<avest<<"\n";
+							if(torosg>=liceyg){
+								cout<<"5to.               Toros del Este.           "<<torosg<<"                 "<<torosp<<"            "<<avto<<"\n";
+								cout<<"6to.               Tigres del Licey.           "<<liceyg<<"                 "<<liceyp<<"            "<<avli<<"\n";
+								}
+								if(liceyg>=torosg){
+									cout<<"5to.               Tigres del Licey.           "<<liceyg<<"                 "<<liceyp<<"            "<<avli<<"\n";
+									cout<<"6to.               Toros del Este.           "<<torosg<<"                 "<<torosp<<"            "<<avto<<"\n";
+								}
+						}
+						else if(liceyg>=torosg  and liceyg>=estrellasg){ //GIGANTES 4to
+							cout<<"4to.               Tigres del Licey.           "<<liceyg<<"                 "<<liceyp<<"            "<<avli<<"\n";
+							if(torosg>=estrellasg){
+								cout<<"5to.               Toros del Este.           "<<torosg<<"                 "<<torosp<<"            "<<avto<<"\n";
+								cout<<"6to.               Estrellas Orientales.           "<<estrellasg<<"                 "<<estrellasp<<"            "<<avest<<"\n";
+							}
+							if(estrellasg>=torosg){
+								cout<<"5to.               Estrellas Orientales.           "<<estrellasg<<"                 "<<estrellasp<<"            "<<avest<<"\n";
+								cout<<"6to.               Toros del Este.           "<<torosg<<"                 "<<torosp<<"            "<<avto<<"\n";
+							}
+						}
+				}
+				else if(toros>=aguilasg and torosg>=estrellasg and torosg>=liceyg){  //TOROS 3ro
+				cout<<"3ro.               Toros del Este.           "<<torosg<<"                 "<<torosp<<"            "<<avto<<"\n";
+				
+						if(aguilasg>=estrellasg  and aguilasg>=liceyg){  //AGUILAS 4To
+							cout<<"4to.               Aguilas Cibae?as.           "<<aguilasg<<"                 "<<aguilasp<<"            "<<avag<<"\n";
+							
+							if(estrellasg>=liceyg){  //ESTRELLAS 5TO
+								cout<<"5to.               Estrellas Orientales.           "<<estrellasg<<"                 "<<estrellasp<<"            "<<avest<<"\n";
+								cout<<"6to.               Tigres del Licey.           "<<liceyg<<"                 "<<liceyp<<"            "<<avli<<"\n";
+								}
+							
+								if(liceyg>=estrellasg){  //GIGANTES 5To
+									cout<<"5to.               Tigres del Licey.           "<<liceyg<<"                 "<<liceyp<<"            "<<avli<<"\n";
+									cout<<"6to.               Estrellas Orientales.           "<<estrellasg<<"                 "<<estrellasp<<"            "<<avest<<"\n";
+								}		
+						}
+						else if(estrellasg>=aguilasg  and estrellasg>=liceyg){ //ESTRELLAS 4TO
+							cout<<"4to.               Estrellas Orientales.           "<<estrellasg<<"                 "<<estrellasp<<"            "<<avest<<"\n";
+							if(aguilasg>=liceyg){                              //AGUILAS 5TO
+								cout<<"5to.               Aguilas Cibae?as.           "<<aguilasg<<"                 "<<aguilasp<<"            "<<avag<<"\n";
+								cout<<"6to.               Tigres del Licey.           "<<liceyg<<"                 "<<liceyp<<"            "<<avli<<"\n";
+								}
+							else if(liceyg>=aguilasg){                         //GIGANTES 5to
+									cout<<"5to.               Tigres del Licey.           "<<liceyg<<"                 "<<liceyp<<"            "<<avli<<"\n";
+									cout<<"6to.               Aguilas Cibae?as.           "<<aguilasg<<"                 "<<aguilasp<<"            "<<avag<<"\n";
+								}
+						}
+						else if(liceyg>=aguilasg  and gigantesg>=estrellasg){  //GIGANTES 4TO
+							cout<<"4to.               Tigres del Licey.           "<<liceyg<<"                 "<<liceyp<<"            "<<avli<<"\n";
+							if(aguilasg>=estrellasg){                             //AGUILAS 5TO
+								cout<<"5to.               Aguilas Cibae?as.           "<<aguilasg<<"                 "<<aguilasp<<"            "<<avag<<"\n";
+								cout<<"6to.               Estrellas Orientales.           "<<estrellasg<<"                 "<<estrellasp<<"            "<<avest<<"\n";
+							}
+							else if(estrellasg>=aguilasg){                        //ESTRELLAS 5To
+								cout<<"5to.               Estrellas Orientales.           "<<estrellasg<<"                 "<<estrellasp<<"            "<<avest<<"\n";
+								cout<<"6to.               Aguilas Cibae?as.           "<<aguilasg<<"                 "<<aguilasp<<"            "<<avag<<"\n";
+							}
+						}
+				}
+				else if(liceyg>=aguilasg and liceyg>=estrellasg and liceyg>=torosg){  //GIGANTES 3ro
+				cout<<"3ro.               Tigres del Licey.           "<<liceyg<<"                 "<<liceyp<<"            "<<avli<<"\n";
+				
+						if(aguilasg>=estrellasg  and aguilasg>=torosg){                       //AGUILAS 4to
+							cout<<"4to.               Aguilas Cibae?as.           "<<aguilasg<<"                 "<<aguilasp<<"            "<<avag<<"\n";
+							
+							if(estrellasg>=gigantesg){                                       //ESTRELLAS 5TO
+								cout<<"5to.               Estrellas Orientales.           "<<estrellasg<<"                 "<<estrellasp<<"            "<<avest<<"\n";
+								cout<<"6to.               Toros del Este.           "<<torosg<<"                 "<<torosp<<"            "<<avto<<"\n";
+								}
+							
+								if(gigantesg>=estrellasg){                                   //TOROS 5TO
+									cout<<"5to.               Toros del Este.           "<<torosg<<"                 "<<torosp<<"            "<<avto<<"\n";
+									cout<<"6to.               Estrellas Orientales.           "<<estrellasg<<"                 "<<estrellasp<<"            "<<avest<<"\n";
+								}		
+						}
+						else if(estrellasg>=aguilasg  and estrellasg>=torosg){              //ESTRELLA 4TO
+							cout<<"4to.               Estrellas Orientales.           "<<estrellasg<<"                 "<<estrellasp<<"            "<<avest<<"\n";
+							if(aguilasg>=torosg){                                          //AGUILAS 5TO
+								cout<<"5to.               Aguilas Cibae?as.           "<<aguilasg<<"                 "<<aguilasp<<"            "<<avag<<"\n";
+								cout<<"6to.               Toros del Este.           "<<torosg<<"                 "<<torosp<<"            "<<avto<<"\n";
+								}
+							else if(torosg>=aguilasg){                                    //TOROS 5To
+									cout<<"5to.               Toros del Este.           "<<torosg<<"                 "<<torosp<<"            "<<avto<<"\n";
+									cout<<"6to.               Aguilas Cibae?as.           "<<aguilasg<<"                 "<<aguilasp<<"            "<<avag<<"\n";
+								}
+						}
+						else if(torosg>=aguilasg  and torosg>=estrellasg){               //TOROS 4to
+							cout<<"4to.               Toros del Este.           "<<torosg<<"                 "<<torosp<<"            "<<avto<<"\n";
+							if(aguilasg>=estrellasg){                                    //AGUILAS 5to
+								cout<<"5to.               Aguilas Cibae?as.           "<<aguilasg<<"                 "<<aguilasp<<"            "<<avag<<"\n";
+								cout<<"6to.               Estrellas Orientales.           "<<estrellasg<<"                 "<<estrellasp<<"            "<<avest<<"\n";
+							}
+							else if(estrellasg>=aguilasg){                               //ESTRELLAS 5to
+								cout<<"5to.               Estrellas Orientales.           "<<estrellasg<<"                 "<<estrellasp<<"            "<<avest<<"\n";
+								cout<<"6to.               Aguilas Cibae?as.           "<<aguilasg<<"                 "<<aguilasp<<"            "<<avag<<"\n";
+							}
+						}
+					}
+				else if(estrellasg>=aguilasg and estrellasg>=liceyg and estrellasg>=torosg){  //ESTRELLAS 3ro
+				cout<<"3ro.               Estrellas Orientales.           "<<estrellasg<<"                 "<<estrellasp<<"            "<<avest<<"\n";
+				
+						if(liceyg>=aguilasg  and estrellasg>=torosg){                       //LICEY 4to
+							cout<<"4to.               Tigres del Licey.           "<<liceyg<<"                 "<<liceyp<<"            "<<avli<<"\n";
+							
+							if(aguilasg>=torosg){                                       //AGUILAS 5TO
+								cout<<"5to.               Aguilas Cibae?as.           "<<aguilasg<<"                 "<<aguilasp<<"            "<<avag<<"\n";
+								cout<<"6to.               Toros del Este.           "<<torosg<<"                 "<<torosp<<"            "<<avto<<"\n";
+								}
+							
+								if(torosg>=aguilasg){                                   //TOROS 5TO
+									cout<<"5to.               Toros del Este.           "<<torosg<<"                 "<<torosp<<"            "<<avto<<"\n";
+									cout<<"6to.               Aguilas Cibae?as.           "<<aguilasg<<"                 "<<aguilasp<<"            "<<avag<<"\n";
+								}		
+						}
+						else if(aguilasg>=gigantesg  and aguilasg>=torosg){              //AGUILAS 4TO
+							cout<<"4to.               Aguilas Cibae?as.           "<<aguilasg<<"                 "<<aguilasp<<"            "<<avag<<"\n";
+							if(liceyg>=torosg){                                          //GIGANTES 5TO
+								cout<<"5to.               Tigres del Licey.           "<<liceyg<<"                 "<<liceyp<<"            "<<avli<<"\n";
+								cout<<"6to.               Toros del Este.           "<<torosg<<"                 "<<torosp<<"            "<<avto<<"\n";
+								}
+							else if(torosg>=liceyg){                                    //TOROS 5To
+									cout<<"5to.               Toros del Este.           "<<torosg<<"                 "<<torosp<<"            "<<avto<<"\n";
+									cout<<"6to.               Tigres del Licey.           "<<liceyg<<"                 "<<liceyp<<"            "<<avli<<"\n";
+								}
+						}
+						else if(torosg>=aguilasg  and torosg>=estrellasg){               //TOROS 4to
+							cout<<"4to.               Toros del Este.           "<<torosg<<"                 "<<torosp<<"            "<<avto<<"\n";
+							if(aguilasg>=liceyg){                                    //AGUILAS 5to
+								cout<<"5to.               Aguilas Cibae?as.           "<<aguilasg<<"                 "<<aguilasp<<"            "<<avag<<"\n";
+								cout<<"6to.               Tigres del Licey.           "<<liceyg<<"                 "<<liceyp<<"            "<<avli<<"\n";}
+							else if(liceyg>=aguilasg){                               //GIGANTES 5to
+								cout<<"5to.               Tigres del Licey.           "<<liceyg<<"                 "<<liceyp<<"            "<<avli<<"\n";
+								cout<<"6to.               Aguilas Cibae?as.           "<<aguilasg<<"                 "<<aguilasp<<"            "<<avag<<"\n";}
+						}
+					}
+				}
+}
+	return 0;
+}
