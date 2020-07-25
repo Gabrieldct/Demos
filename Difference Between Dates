@@ -1,0 +1,112 @@
+/**
+ *
+ * @author Gabriel 2017-1023
+ */
+import java.util.Scanner;
+public class DiferenciaEntreFechas {
+    
+    public static void main(String[] args) {
+        
+      Scanner entrada = new Scanner(System.in);
+      
+      System.out.println("***Calculo de diferencia entre fechas***");
+      
+      int DiaFinal, MesFinal, AnoFinal, DiaInicial, MesInicial, AnoInicial;
+      
+     do {
+         do{
+            do {
+                do {
+                    
+                    System.out.println("Ingrese el dia final:");
+                    DiaFinal = entrada.nextInt();
+                    System.out.println("Ingrese el mes final:");
+                    MesFinal = entrada.nextInt();
+                    System.out.println("Ingrese el a�o final:");
+                    AnoFinal = entrada.nextInt();
+
+                    System.out.println("Ingrese el dia inicial:");
+                    DiaInicial = entrada.nextInt();
+                    System.out.println("Ingrese el mes inicial:");
+                    MesInicial = entrada.nextInt();
+                    System.out.println("Ingrese el a�o inicial:");
+                    AnoInicial = entrada.nextInt();
+
+          
+                    if (MesFinal > 12 || MesInicial > 12 || MesFinal < 1 || MesInicial < 1 || DiaFinal > 31 || DiaFinal < 1 || DiaInicial > 31 || DiaFinal < 1 || AnoFinal < 1800 || AnoInicial < 1800)
+                                  System.out.println("***Una o ambas fechas son invalidas***");
+
+                    else if (AnoFinal == AnoInicial && MesFinal == MesInicial && DiaFinal < DiaInicial)
+                      System.out.println("***La fecha final no puede ser anterior a la inicial***");
+
+                    else if (AnoFinal == AnoInicial && MesFinal < MesInicial)
+                      System.out.println("***La fecha final no puede ser anterior a la inicial***");
+
+                    else if (AnoFinal < AnoInicial)
+                      System.out.println("***La fecha final no puede ser anterior a la inicial***");
+
+                            }
+                            while (MesFinal > 12 || MesInicial > 12 || MesFinal < 1 || MesInicial < 1 || DiaFinal > 31 || DiaFinal < 1 || DiaInicial > 31 || DiaFinal < 1 || AnoFinal < 1800 || AnoInicial < 1800);
+                          }
+                          while(AnoFinal < AnoInicial);
+                      }
+                      while (AnoFinal == AnoInicial && MesFinal < MesInicial);
+                 }
+                 while (AnoFinal == AnoInicial && MesFinal == MesInicial && DiaFinal < DiaInicial);
+     
+      
+      if (DiaFinal < DiaInicial){
+          switch (MesFinal){
+                    case 1: DiaFinal+=31;
+                              break;
+                    case 2: if (AnoFinal%4==0)
+                                DiaFinal+=29;
+                            else
+                                DiaFinal+=28;
+                              break;
+                    case 3: DiaFinal+=31;
+                              break;
+                    case 4: DiaFinal+=30;
+                              break;        
+                    case 5: DiaFinal+=31;
+                              break;         
+                    case 6: DiaFinal+=30;
+                              break;                  
+                    case 7: DiaFinal+=31;
+                              break;                   
+                    case 8: DiaFinal+=31;
+                              break;                             
+                    case 9: DiaFinal+=30;
+                              break;                            
+                    case 10: DiaFinal+=31;
+                              break;                                       
+                    case 11: DiaFinal+=30;
+                              break;                                      
+                    case 12: DiaFinal+=31;
+                              break;                                                 
+                    default: break;
+                }
+          MesFinal-=1;
+        }
+            
+      if (MesFinal < MesInicial){
+          if (AnoFinal%4==0){
+              MesFinal+=12;
+              DiaFinal+=1;
+          }
+          else
+            MesFinal+=12;
+        
+        AnoFinal-=1;
+        }
+      
+      if (AnoInicial%4==0)
+          DiaInicial+=1;
+      
+      int diaRes = DiaFinal - DiaInicial;
+      int mesRes = MesFinal - MesInicial;
+      int anioRes = AnoFinal - AnoInicial;
+      
+      System.out.println("La diferencia es de " + diaRes + " dias " + mesRes + " meses y " + anioRes + " a�os.");
+    }
+}
