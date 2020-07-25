@@ -1,0 +1,91 @@
+using System;
+using System.Security.Cryptography.X509Certificates;
+
+namespace 5-5
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int x = 0;
+            
+            int verf;
+            Console.WriteLine("introduce el Monto a desglozar");
+            while (x == 0)
+            {
+                string var = Console.ReadLine();
+
+                //Verificacion se esta introduciendo un numero
+                if (Int32.TryParse(var, out verf) != false)
+                {
+                    x = Convert.ToInt32(var);
+                   
+                }
+                else
+                {
+                    Console.WriteLine("introduzca un numero valido");
+                    int j = 0; j++;
+                    if(j == 5)
+                    {
+                        Console.Clear();
+                    }
+                }
+                Console.WriteLine("\n \n Desglose para el Monto " + x + "\n \n");
+            }
+            if(x >= 2000)
+            {
+                Console.WriteLine("Billetes de 2000 " + "\t" + x / 2000 +"\n");
+                x = x % 2000;
+            }
+            if (x >= 1000)
+            {
+                Console.WriteLine("Billetes de 1000 " + "\t" + x / 1000 + "\n");
+                x = x % 1000;
+            }
+            if (x >= 500)
+            {
+                Console.WriteLine("Billetes de 500 " + "\t" + x / 500 + "\n");
+                x = x % 500;
+            }
+            if (x >= 200)
+            {
+                Console.WriteLine("Billetes de 200 " + "\t" + x / 200 + "\n");
+                x = x % 200;
+            }
+            if (x >= 100)
+            {
+                Console.WriteLine("Billetes de 100 " + "\t" + x / 100 + "\n");
+                x = x % 100;
+            }
+            if (x >= 50)
+            {
+                Console.WriteLine("Billetes de 50 " + "\t \t" + x / 50 + "\n");
+                x = x % 50;
+            }
+            if (x >= 25)
+            {
+                Console.WriteLine("Monedas de 25 " + "\t \t" + x / 25 + "\n");
+                x = x % 25;
+            }
+            if (x >= 10)
+            {
+                Console.WriteLine("Monedas de 10 " + "\t \t" + x / 10 + "\n");
+                x = x % 10;
+            }
+            if (x >= 5)
+            {
+                Console.WriteLine("Monedas de 5 " + "\t \t" + x / 5 + "\n");
+                x = x % 5;
+            }
+            if (x >= 1)
+            {
+                Console.WriteLine("Monedas de 1 " + "\t \t" + x / 1 + "\n");
+                x = x % 1;
+            }
+            
+            Console.WriteLine(" \n \n Presione culquier tecla para cerrar el programa");
+            Console.ReadKey();
+        }
+
+    }
+}
