@@ -1,0 +1,52 @@
+// Imprime 50 numeros enteros suientes, 50 numeros pares siguientes y 50 numeros impares siguientes de un numero introducido
+// Creado por Gabriel Del Castillo 2017-1023
+// Fecha de creacion 19/11/17
+
+#include <iostream>
+using namespace std;
+
+int main(){
+	int end=1;
+	while(end==1){
+		system("CLS");
+	int numero=0,enteros,pares,impares,content=0,contp=0,contimp=0;
+	while(numero<1 || numero>5000){
+	cout<<"introduzca un numero entre 1 y 5000\n";
+	cin>>numero;
+	}
+	enteros=numero;
+	pares=numero;
+	impares=numero;
+	cout<<"50 numeros enteros siguientes\n";
+	//50 numeros enteros siguientes
+	 while(content<50){
+	enteros=enteros+1;
+	cout<<enteros<<"\t";
+	content=content+1;
+	}
+	
+	if(numero % 2 == 0){ //SI ES PAR
+	impares=impares-1;
+	}
+	else{ //SI NO ES PAR
+	pares=pares-1;
+	}
+	//PARES
+	cout<<"\n 50 Numeros Pares siguientes \n";
+	while(contp<50){
+	pares=pares+2;
+	cout<<pares<<"\t";
+	contp=contp+1;
+	}
+	
+	cout<<"\n 50 Numeros Impares siguientes \n";
+	while(contimp<50){
+	impares=impares+2;
+	cout<<impares<<"\t";
+	contimp=contimp+1;
+	}
+	cout<<"\n"<<"Introduzca 1 para repetir y otro numero para terminar\n";
+	cin>>end;
+}
+	return 0;
+}
