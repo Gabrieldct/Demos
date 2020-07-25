@@ -1,0 +1,73 @@
+//Juego Adivina el numero aleatorio 1-100 intentos Variables
+//Creado por : Gabriel Del Castillo 2017-1023
+//Fecha de creacion: 10/11/17
+
+#include <iostream>
+#include<time.h>
+#include <cstdlib>
+using namespace std;
+
+int main(){
+	int r=0;
+	int end = 1;
+	
+	while(end==1){
+		system("CLS");
+		cout<<"tengo un numero del 0 al 100 crees que lo puedas adivinar?\n";
+		
+		//Declaracion variables
+	int contador=0;
+	int x;
+	int intentos=-1;
+	int pista;
+	srand(time(NULL));
+	int r= rand()%101;  //Numeros del 0-100
+	
+		//Numero De Intentos
+
+		while(intentos<0){
+		cout<<"cuantos intentos quieres?(recuerda que el numero de intentos debe ser mayor que 0)\n";
+		cin>>intentos;
+	}
+	 while(contador!=intentos){
+	 contador=contador+1;
+	 cout<<"intento nro."<<contador<<"\n";
+	 cout<<"introduce el numero  ";
+	 cin>>x;
+	 
+	 if(x==r){			//GANADOR
+	 	cout<<"Lo adivinaste en "<<contador<<" intentos�n";
+		 contador=intentos;
+	 }
+	 else if(x<r){			//NUMERO POR DEJABO PISTAS
+	 	pista= r-x;			//CALCULO PARA LA CERCANIA
+	 	if(pista>25){
+	 	cout<<"TA FRIOOOO es mas grande\n";
+	 	}
+	 	else if(pista<=25 and pista>=10){
+	 	cout<<"TIBIO tienes que subir mas\n";
+		}
+		else if(pista<=10){
+			cout<<"TA CALIENTEEE subelo un poco mas\n";
+		}
+	 }
+	 	else if(x>r){				//NUMERO POR ENCIMA PISTAS
+	 		pista= x-r;				//CALCULO PARA LA CERCANIA
+	 	if(pista>=25){
+	 	cout<<"TA FRIOOOO es mas peque�o \n";
+	 	}
+	 	else if(pista<=25 and pista>=10){
+	 	cout<<"TIBIO tienes que bajalo mas\n";
+		}
+		else if(pista<=10){
+			cout<<"TA CALIENTEEE bajalo un poco mas\n";
+		 }
+	 }
+}
+cout<<"GAME OVER\n";
+cout<<"introduce 1 para repetir cualquier otro numero para terminar\n"; //TERMINADOR
+cin>>end;
+}
+return 0;
+}
+
